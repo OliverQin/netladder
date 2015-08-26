@@ -82,7 +82,7 @@ class TunnelServerTransportProtocol(WebSocketServerProtocol):
         except:
             pass
         
-ip, port = '0.0.0.0', 5000
+ip, port = '0.0.0.0', os.environ.get('PORT', 5000)
    
 factory = WebSocketServerFactory('ws://{0}:{1}'.format(ip, port), debug = False)
 factory.protocol = TunnelServerTransportProtocol
