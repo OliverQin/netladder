@@ -69,18 +69,20 @@ class TunnelServerTransportProtocol(WebSocketServerProtocol):
         self.onMessageInner(payload)
         
     def onClose(self, wasClean, code, reason):
-        #print 'app ws closing...', wasClean
-        if self.remoteTransport.can_write_eof():
-            #print 'writing eof'
-            self.remoteTransport.write_eof()
-        self.remoteTransport.close()
+        try:
+            #print 'app ws closing...', wasClean
+            if self.remoteTransport.can_write_eof():
+                #print 'writing eof'
+                self.remoteTransport.write_eof()
+        except:
+            pass
         
+        try:
+            self.remoteTransport.close()
+        except:
+            pass
         
-
-if 'PORT' in os.environ:
-    ip, port = '127.0.0.1', int(os.environ['PORT'])
-else:
-    ip, port = '127.0.0.1', 5000
+ip, port = '0.0.0.0', 5000
    
 factory = WebSocketServerFactory('ws://{0}:{1}'.format(ip, port), debug = False)
 factory.protocol = TunnelServerTransportProtocol
