@@ -1,2 +1,2 @@
-trollius==1.0.4
-autobahn==0.9.4
+trollius>=1.0.4
+autobahn>=0.9.4
