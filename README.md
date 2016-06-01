@@ -14,6 +14,6 @@ Deploy the `app.py` on server side. Run `local.py` locally. It works as a SOCKS5
 ## Known issues
 - SOCKS5 server only supports IPv4.
 - TCP Only, UDP not supported.
-- It support HTTPS (it's required in severe environments), but certificates are not checked. Thus it may suffer from MITM attack.
+- It supports HTTPS (it's required in severe environments), but certificates are not checked. Thus it may suffer from MITM attack.
 
 Use It At Your Own Risk!
