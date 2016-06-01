@@ -16,4 +16,4 @@ Deploy the `app.py` on server side. Run `local.py` locally. It works as a SOCKS5
 - TCP Only, UDP not supported.
 - It support HTTPS (it's required in severe environments), but certificates are not checked. Thus it may suffer from MITM attack.
 
-use It On Your Own Risk!
+Use It At Your Own Risk!
